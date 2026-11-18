@@ -64,3 +64,20 @@ Decisions
 - Texture is procedural (SVG turbulence tiles), so it costs no image weight: clouds on black, fibre on bone, dots on red.
 - Motion is layered: ambient (grain, bobbing stickers), scroll (progress bar, skew, parallax, pinned chapters), cursor (spotlight, trail, proximity type, tilt, magnetism) and state (rolling text, scramble, ripples).
 - Every effect is disabled for reduced motion and on touch devices where it needs a cursor.
+
+## Round 4: loader, social gallery, motion gallery
+
+Direction from the client: replace the countdown loader with something drawn from other sites; make the social work a gallery that moves with the cursor and blurs out on click; keep every video on the site (no Drive links); remove the scroll-speed skew, which looked wrong, especially on phones.
+
+| Reference | What stood out | Used as |
+|---|---|---|
+| Framer "Preloader Aesthetic" (component page) | Hairline frame, rolling counter, a flash of the maker's own imagery, name reveal, closed by a wipe | Overall loader sequence |
+| Framer "Image GSAP Preloader" (component page) | Several images cycle, the last one expands to full screen | Final image takes over the screen, then lifts away |
+| Framer "Haytham Preloader" (component page) | Letter-by-letter name reveal and a full-screen image takeover | Name rises into place while the counter runs |
+| Awwwards Elements, "Loading Animations" set (Stacking Gallery Loader, Obys-style grids, Qoreeb portfolio loader) | Counter plus image sequence is the common premium portfolio pattern | Confirms the pattern; the build is original code |
+
+Decisions
+- Loader: a framed window flashes through six of the actual posters as the counter climbs 000 to 100, a red progress line runs under the frame, the name rises in, then the frame opens to full screen and lifts away to the hero.
+- Social: three rows drift on their own and are pushed by the cursor (drag on touch). Tapping a tile blurs the page with feathered edges, shows the clip large and opens Instagram in a new tab.
+- Motion: "View all" opens an on-site gallery of every Drive clip with filters; each plays in the site's own viewer.
+- Scroll skew: off on phones and touch screens, about a third of the strength on desktop.

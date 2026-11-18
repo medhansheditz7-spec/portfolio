@@ -25,11 +25,18 @@
 <div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <div class="loader" aria-hidden="true">
-  <div class="ld-line ld-h"></div><div class="ld-line ld-v"></div>
-  <div class="ld-dial"><div class="ld-sweep"></div><div class="ld-num">3</div></div>
-  <div class="ld-count mono">000</div>
-  <div class="ld-name mono">Medhansh Tewary</div>
-  <div class="ld-red"></div>
+  <div class="ld-top mono"><span>Medhansh Tewary</span><span>Designer who thinks</span></div>
+  <div class="ld-name" id="ld-name"><span>Medhansh</span></div>
+  <div class="ld-imgs">
+    <img src="assets/work/prada.jpg" alt="" decoding="async">
+    <img src="assets/work/abstract.jpg" alt="" decoding="async">
+    <img src="assets/work/chainsaw.jpg" alt="" decoding="async">
+    <img src="assets/work/killer.jpg" alt="" decoding="async">
+    <img src="assets/work/duolingo.jpg" alt="" decoding="async">
+    <img src="assets/work/deadpool.jpg" alt="" decoding="async">
+  </div>
+  <div class="ld-frame"><i class="ld-bar"></i></div>
+  <div class="ld-count" id="ld-count">000</div>
 </div>
 
 <header class="nav">
@@ -88,7 +95,7 @@
     <div class="work-track">
       <div class="w-intro">
         <h2>Work</h2>
-        <p>Three episodes so far, each a different way of making things. Open one and stay a while.</p>
+        <p>Brand content, graphic design and poster work. Open any project to see the full set.</p>
         <img class="stk dsk" src="assets/stickers/s07.webp" alt="" width="388" height="281" style="--x:62%;--y:-26%;--w:clamp(90px,8vw,130px);--r:14deg" data-r="14" data-d="1.2">
       </div>
 
@@ -140,17 +147,19 @@
         <button class="ep-hit" type="button" data-open="3" data-cursor="View" aria-label="Open EP.03 Poster and Visual Work"></button>
       </article>
 
-      <div class="ep-next">
-        <span class="ep-n">EP.04</span>
-        <h3>Social Media</h3>
-        <p>Carousels, thumbnails and short video. Loading.</p>
-      </div>
     </div>
     <div class="work-bar" aria-hidden="true"><i></i></div>
   </div>
 </section>
 
 <div class="dark">
+<!-- SOCIAL -->
+<section class="social sec" id="social" aria-label="Social media">
+  <h2 class="m-big fit"><span class="fit-in">Social</span></h2>
+  <p class="m-sub">Reels, edits and clips made for social. Tap any one to see it on Instagram.</p>
+  <div class="sg" id="sg" aria-label="Social media work, tap to open Instagram"></div>
+</section>
+
 <!-- MOTION -->
 <section class="motion sec" id="motion" aria-label="Motion">
   <h2 class="m-big fit"><span class="fit-in">Motion</span></h2>
@@ -158,9 +167,9 @@
   <div class="m-grid">
     <figure class="mc">
       <div class="box h" data-yt="5LyXYPwoi4c" style="background-image:url(https://i.ytimg.com/vi/5LyXYPwoi4c/hqdefault.jpg)">
-        <button class="hit" type="button" data-play="5LyXYPwoi4c" data-cursor="Play" aria-label="Play Levi AMV with sound"></button>
+        <button class="hit" type="button" data-play="5LyXYPwoi4c" data-cursor="Play" aria-label="Play Zoro AMV with sound"></button>
       </div>
-      <figcaption>Levi AMV <span>AMV</span></figcaption>
+      <figcaption>Zoro AMV <span>AMV</span></figcaption>
     </figure>
     <figure class="mc">
       <div class="box h" data-yt="0C_xU065F44" style="background-image:url(https://i.ytimg.com/vi/0C_xU065F44/hqdefault.jpg)">
@@ -175,7 +184,7 @@
       <figcaption>Brand Intro <span>Reel</span></figcaption>
     </figure>
   </div>
-  <a class="btn line m-all" href="https://drive.google.com/drive/folders/1Ci25y6cQ55A2cks81zNVQ758BdS7y1oF" target="_blank" rel="noopener" data-mag>View all motion work <span class="arr">&rarr;</span></a>
+  <button class="btn line m-all" type="button" id="vg-open" data-mag>View all motion work <span class="arr">&rarr;</span></button>
   <img class="stk" src="assets/stickers/s02.webp" alt="" width="388" height="286" style="--x:70%;--y:3%;--w:clamp(90px,10vw,160px);--r:-10deg;--xm:66%;--ym:2%;--wm:78px" data-r="-10" data-d="1.2">
   <img class="stk dsk" src="assets/stickers/s12.webp" alt="" width="377" height="388" style="--x:62%;--y:24%;--w:clamp(80px,8vw,124px);--r:9deg" data-r="9" data-d="0.9">
 </section>
@@ -234,6 +243,17 @@
   <div class="ep-head"><div><span class="ep-n" id="ep-n"></span><h2 id="ep-title"></h2></div><p id="ep-desc"></p></div>
   <div class="gal" id="gal"></div>
 </div>
+
+<!-- all motion overlay -->
+<div class="vg" id="vg" role="dialog" aria-modal="true" aria-label="All motion work" data-lenis-prevent>
+  <div class="ep-top"><button class="x" type="button" id="vg-close">&larr; Back</button><span class="nx" id="vg-count"></span></div>
+  <div class="ep-head"><div><span class="ep-n">Motion</span><h2>All motion</h2></div><p>Every edit, AMV and reel in one place. Tap one to play it right here.</p></div>
+  <div class="vg-tabs" id="vg-tabs" role="tablist" aria-label="Filter motion work"></div>
+  <div class="vg-grid" id="vg-grid"></div>
+</div>
+
+<!-- social click veil -->
+<div class="sg-veil" id="sg-veil" aria-hidden="true"><div class="sg-card"><img alt=""></div><p class="sg-say mono">Taking you to Instagram</p></div>
 
 <!-- Lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Viewer">
